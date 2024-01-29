@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<f:view>
+		<h:form>
+
+Ad:<h:inputText value="#{humanBean.adi}" binding="#{humanBean.adDegeri}" />
+			<h:commandButton action="#{humanBean.kaydet2()}" value="HTML Islem" />
+			<h:commandButton action="#{humanBean.kaydet()}" value="KAYDET" />
+			<h:commandButton action="musteri" value="musteri" />
+		</h:form>
+	</f:view>
+	<h:dataTable value="#{humanBean.humanList}" var="cls">
+		<f:facet name="header">INSAN LISTESI</f:facet>
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			#{cls.id}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ad</f:facet>
+			#{cls.ad}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Soyad</f:facet>
+			#{cls.soyad}
+		</h:column>
+	</h:dataTable>
+	
+	<h:dataTable value="#{humanBean.ogrenciList}" var="cls">
+		<f:facet name="header">OGRENCI LISTESI</f:facet>
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			#{cls.id}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ad</f:facet>
+			#{cls.ad}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Soyad</f:facet>
+			#{cls.soyad}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ders</f:facet>
+			#{cls.ders}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ogrenci Numarasi</f:facet>
+			#{cls.ogrenciId}
+		</h:column>
+	</h:dataTable>
+	
+	<h:dataTable value="#{humanBean.ogretmenList}" var="cls">
+		<f:facet name="header">OGRETMEN LISTESI</f:facet>
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			#{cls.id}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ad</f:facet>
+			#{cls.ad}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Soyad</f:facet>
+			#{cls.soyad}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ad</f:facet>
+			#{cls.sicilNo}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Soyad</f:facet>
+			#{cls.verilenDers}
+		</h:column>
+	</h:dataTable>
+</body>
+</html>

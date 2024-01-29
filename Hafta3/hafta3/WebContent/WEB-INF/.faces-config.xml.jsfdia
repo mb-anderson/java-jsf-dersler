@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#giris.xhtml" PATH="/giris.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#giris.xhtml:0" NAME="item"
+   PATH="/giris.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="DOGRU::#anasayfa.xhtml" NAME="output"
+    PATH="/anasayfa.xhtml" TARGET="rules:#anasayfa.xhtml" TITLE="DOGRU" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="YANLIS::#hata.xhtml" NAME="output1"
+    PATH="/hata.xhtml" TARGET="rules:#hata.xhtml" TITLE="YANLIS" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#anasayfa.xhtml" PATH="/anasayfa.xhtml"
+  SHAPE="256,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#hata.xhtml" PATH="/hata.xhtml"
+  SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

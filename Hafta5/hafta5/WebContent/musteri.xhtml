@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<f:view>
+		<h:form>
+			<h:panelGrid columns="2">
+				ad:<h:inputText value="#{musteriView.musteri.ad}" />
+				soyad:<h:inputText value="#{musteriView.musteri.soyad}" />
+				cadde:<h:inputText value="#{musteriView.musteri.adres.cadde}" />
+				sokak:<h:inputText value="#{musteriView.musteri.adres.sokak}" />
+				musteri ad:<h:inputText value="#{musteriView.musteriAd}" />
+				musteri soyad:<h:inputText value="#{musteriView.musteriSoyad}" />
+				deger:<h:inputText value="#{musteriView.deger}" />
+				<h:commandButton action="#{musteriView.kaydet()}" value="Kaydet" />
+				<h:commandButton action="human" value="Human" />
+				<h:commandButton value="Ara" />
+			</h:panelGrid>
+
+			<h:dataTable var="cls" value="#{musteriView.liste}">
+				<f:facet name="header">MUŞTERİ LİSTESİ</f:facet>
+				<h:column>
+					<f:facet name="header">sec</f:facet>
+					<h:commandLink value="sec">
+						<f:setPropertyActionListener value="#{cls}"
+							target="#{musteriView.musteri}"></f:setPropertyActionListener>
+
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">ad</f:facet>
+					<h:outputText value="#{cls[0].ad}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">soyad</f:facet>
+					<h:outputText value="#{cls[0].soyad}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">maas</f:facet>
+					<h:outputText value="#{cls[0].maas}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">yillik getiri</f:facet>
+					<h:outputText value="#{cls[0].yillikGetiri}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">cadde</f:facet>
+					<h:outputText value="#{cls[1].cadde}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">sokak</f:facet>
+					<h:outputText value="#{cls[1].sokak}" />
+				</h:column>
+			</h:dataTable>
+			<h:dataTable var="cls" value="#{musteriView.listeAra}">
+				<f:facet name="header">MÜŞTERİ LİSTESİ ARAMA</f:facet>
+				<h:column>
+					<f:facet name="header">sec</f:facet>
+					<h:commandLink value="sec">
+						<f:setPropertyActionListener value="#{cls}"
+							target="#{musteriView.musteri}"></f:setPropertyActionListener>
+
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">ad</f:facet>
+					<h:outputText value="#{cls[0].ad}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">soyad</f:facet>
+					<h:outputText value="#{cls[0].soyad}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">maas</f:facet>
+					<h:outputText value="#{cls[0].maas}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">yillik getiri</f:facet>
+					<h:outputText value="#{cls[0].yillikGetiri}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">cadde</f:facet>
+					<h:outputText value="#{cls[1].cadde}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">sokak</f:facet>
+					<h:outputText value="#{cls[1].sokak}" />
+				</h:column>
+			</h:dataTable>
+			<h:dataTable var="cls" value="#{musteriView.listeNamedQuery}">
+				<f:facet name="header">MÜŞTERİ LİSTESİ NAMED QUERY</f:facet>
+				<h:column>
+					<f:facet name="header">sec</f:facet>
+					<h:commandLink value="sec">
+						<f:setPropertyActionListener value="#{cls}"
+							target="#{musteriView.musteri}"></f:setPropertyActionListener>
+
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">ad</f:facet>
+					<h:outputText value="#{cls[0].ad}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">soyad</f:facet>
+					<h:outputText value="#{cls[0].soyad}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">maas</f:facet>
+					<h:outputText value="#{cls[0].maas}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">yillik getiri</f:facet>
+					<h:outputText value="#{cls[0].yillikGetiri}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">cadde</f:facet>
+					<h:outputText value="#{cls[1].cadde}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">sokak</f:facet>
+					<h:outputText value="#{cls[1].sokak}" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+			
+	</f:view>
+</body>
+</html>

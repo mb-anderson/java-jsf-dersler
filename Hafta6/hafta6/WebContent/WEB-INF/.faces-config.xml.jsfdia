@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#human.xhtml" PATH="/human.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#human.xhtml:0" NAME="item"
+   PATH="/human.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="musteri::#musteri.xhtml" NAME="output"
+    PATH="/musteri.xhtml" TARGET="rules:#musteri.xhtml" TITLE="musteri" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#musteri.xhtml" PATH="/musteri.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#musteri.xhtml:0" NAME="item"
+   PATH="/musteri.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="human::#human.xhtml" NAME="output"
+    PATH="/human.xhtml" TARGET="rules:#human.xhtml" TITLE="human" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

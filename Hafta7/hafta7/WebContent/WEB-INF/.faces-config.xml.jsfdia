@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#Giris.xhtml" PATH="/Giris.xhtml"
+  SHAPE="237,100,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Giris.xhtml:0" NAME="item"
+   PATH="/Giris.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="dogru::#Musteri.xhtml" NAME="output"
+    PATH="/Musteri.xhtml" TARGET="rules:#Musteri.xhtml" TITLE="dogru" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="yanlis::#Hata.xhtml" NAME="output1"
+    PATH="/Hata.xhtml" TARGET="rules:#Hata.xhtml" TITLE="yanlis" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Hata.xhtml" PATH="/Hata.xhtml"
+  SHAPE="352,248,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Hata.xhtml:0" NAME="item" PATH="/Hata.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="geri::#Giris.xhtml" NAME="output"
+    PATH="/Giris.xhtml"
+    SHAPE="401,280,408,280,408,312,216,312,216,104,231,104"
+    TARGET="rules:#Giris.xhtml" TITLE="geri" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Musteri.xhtml" PATH="/Musteri.xhtml"
+  SHAPE="456,96,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<f:view>
+		<h:form>
+			<h:panelGrid columns="2">
+ad:<h:inputText value="#{musteriView.musteri.ad}" />
+soyad:<h:inputText value="#{musteriView.musteri.soyad}" />
+yas:<h:inputText value="#{musteriView.musteri.yas}" />
+cinsiyet:<h:selectOneRadio value="#{musteriView.musteri.cinsiyet}">
+					<f:selectItem itemLabel="bay" itemValue="bay"></f:selectItem>
+					<f:selectItem itemLabel="bayan" itemValue="bayan"></f:selectItem>
+				</h:selectOneRadio>
+otel:<h:selectOneRadio value="#{musteriView.musteri.otel}">
+					<f:selectItem itemLabel="buyukotel" itemValue="buyukotel"></f:selectItem>
+					<f:selectItem itemLabel="kucukotel" itemValue="kucukotel"></f:selectItem>
+				</h:selectOneRadio>
+odatipi:<h:selectOneMenu value="#{musteriView.musteri.odaTipi}">
+					<f:selectItem itemLabel="luks" itemValue="luks"></f:selectItem>
+					<f:selectItem itemLabel="orta" itemValue="orta"></f:selectItem>
+					<f:selectItem itemLabel="kucuk" itemValue="kucuk"></f:selectItem>
+
+
+				</h:selectOneMenu>
+sehir:<h:selectOneMenu value="#{musteriView.musteri.sehir}">
+					<f:selectItem itemLabel="ANKARA" itemValue="ANKARA"></f:selectItem>
+					<f:selectItem itemLabel="ADANA" itemValue="ADANA"></f:selectItem>
+					<f:selectItem itemLabel="CANKIRI" itemValue="CANKIRI"></f:selectItem>
+
+				</h:selectOneMenu>
+				
+				cadde:<h:inputText value="#{musteriView.musteri.adres.cadde}" />
+sokak:<h:inputText value="#{musteriView.musteri.adres.sokak}" />
+					
+					fakülteAdi:<h:inputText
+					value="#{musteriView.musteri.fakulte.fakulte_adi}" />
+BolumAdi:<h:inputText value="#{musteriView.musteri.fakulte.bolum_adi}" />
+ universiteAdi:<h:inputText
+					value="#{musteriView.musteri.universite.universite_adi}" />
+
+
+				<h:commandButton action="#{musteriView.kaydet()}" value="kaydet" />
+				<h:commandButton action="#{musteriView.guncelle()}" value="guncelle" />
+				<h:commandButton action="geri" value="geri" />
+			</h:panelGrid>
+			<h:dataTable var="cls" value="#{musteriView.getKayitListesi()}">
+				<f:facet name="header">musteri listesi</f:facet>
+				<h:column>
+					<f:facet name="header">sec</f:facet>
+					<h:commandLink value="sec">
+						<f:setPropertyActionListener value="#{cls}"
+							target="#{musteriView.musteri}"></f:setPropertyActionListener>
+
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">sil</f:facet>
+					<h:commandLink value="sil" action="#{musteriView.sil()}">
+						<f:setPropertyActionListener value="#{cls}"
+							target="#{musteriView.musteri}"></f:setPropertyActionListener>
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">ad</f:facet>
+					<h:outputText value="#{cls.ad}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">soyad</f:facet>
+					<h:outputText value="#{cls.soyad}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">yas</f:facet>
+					<h:outputText value="#{cls.yas}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">cinsiyet</f:facet>
+					<h:outputText value="#{cls.cinsiyet}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">otel</f:facet>
+					<h:outputText value="#{cls.otel}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">odatipi</f:facet>
+					<h:outputText value="#{cls.odaTipi}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">sehir</f:facet>
+					<h:outputText value="#{cls.sehir}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">cadde</f:facet>
+					<h:outputText value="#{cls.adres.cadde}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">sokak</f:facet>
+					<h:outputText value="#{cls.adres.sokak}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">fakülteAdi</f:facet>
+					<h:outputText value="#{cls.fakulte.fakulte_adi}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">BolumAdi</f:facet>
+					<h:outputText value="#{cls.fakulte.bolum_adi}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">universiteAdi</f:facet>
+					<h:outputText value="#{cls.universite.universite_adi}" />
+				</h:column>
+
+
+			</h:dataTable>
+			Arama: <h:inputText value="#{musteriView.arama}" />
+			<h:commandButton action="#{musteriView.ara()}" value="ara" />
+			<h:dataTable var="cls" value="#{musteriView.getKayitListesi()}">
+				<f:facet name="header">musteri listesi</f:facet>
+
+				<h:column>
+					<f:facet name="header">ad</f:facet>
+					<h:outputText value="#{cls.ad}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">soyad</f:facet>
+					<h:outputText value="#{cls.soyad}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">yas</f:facet>
+					<h:outputText value="#{cls.yas}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">cinsiyet</f:facet>
+					<h:outputText value="#{cls.cinsiyet}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">otel</f:facet>
+					<h:outputText value="#{cls.otel}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">odatipi</f:facet>
+					<h:outputText value="#{cls.odaTipi}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">sehir</f:facet>
+					<h:outputText value="#{cls.sehir}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">cadde</f:facet>
+					<h:outputText value="#{cls.adres.cadde}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">sokak</f:facet>
+					<h:outputText value="#{cls.adres.sokak}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">fakülteAdi</f:facet>
+					<h:outputText value="#{cls.fakulte.fakulte_adi}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">BolumAdi</f:facet>
+					<h:outputText value="#{cls.fakulte.bolum_adi}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">universiteAdi</f:facet>
+					<h:outputText value="#{cls.universite.universite_adi}" />
+				</h:column>
+
+
+			</h:dataTable>
+		</h:form>
+	</f:view>
+</body>
+</html>
